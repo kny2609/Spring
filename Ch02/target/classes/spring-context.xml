@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- 어노테이션으로 선언된 객체를 등록하기 위한 패키지 설정  -->
+	<context:component-scan base-package="kr.co.ch02"></context:component-scan>
+	
+	<!-- 객체 등록 -->
+	<bean id="lgTV" class="kr.co.ch02.sub2.LgTV"></bean>
+	<bean id="samsungTV" class="kr.co.ch02.sub2.SamsungTV"></bean>
+	
+	<!-- Setter를 이용한 Ioc 실습 -->
+	<bean id="sub3Spk" class="kr.co.ch02.sub3.Speaker"></bean>	
+	<bean id="sub3LgTV" class="kr.co.ch02.sub3.LgTV">
+		<property name="spk" ref="sub3Spk"></property>
+	</bean>
+	<bean id="sub3SamsungTV" class="kr.co.ch02.sub3.SamsungTV">
+		<property name="spk" ref="sub3Spk"></property>
+	</bean>
+	
+	<!-- 생성자를 이용한 Ioc 실습 -->
+	<bean id="sub4Spk" class="kr.co.ch02.sub4.Speaker"></bean>	
+	<bean id="sub4LgTV" class="kr.co.ch02.sub4.LgTV">
+		<constructor-arg name="spk" ref="sub4Spk"></constructor-arg>
+	</bean>
+	<bean id="sub4SamsungTV" class="kr.co.ch02.sub4.SamsungTV">
+		<constructor-arg name="spk" ref="sub4Spk"></constructor-arg>
+	</bean>
+	
+</beans>
