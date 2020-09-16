@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<body>
+	<h3>타임리프 문법 실습하기</h3>
+	
+	<h4>th:text</h4>
+	<h3 th:text="${tit}">tit 출력</h3>
+	
+	<h4>th:if</h4>
+	<p>
+		<a href="#" th:if="${member == null}">로그인</a>
+		<a href="#" th:unless="${member == null}">로그아웃</a>
+	</p>
+	
+	<h4>th:each</h4>
+	<table border="1">
+		<tr th:each="user:${users}">
+			<td th:text="${user.uid}">아이디</td>
+			<td th:text="${user.name}">이름</td>
+			<td th:text="${user.age}">나이</td>
+			<td th:text="${user.rdate.substring(2, 10)}">날짜</td>
+		</tr>
+	</table>
+	
+	<h4>th:with</h4>
+	<table border="1" th:with="value='A103'">
+		<tr th:each="user:${users}" th:class="${user.uid == value ? 'on': ''}">
+			<td th:text="${user.uid}">아이디</td>
+			<td th:text="${user.name}">이름</td>
+			<td th:text="${user.age}">나이</td>
+			<td th:text="${user.rdate.substring(2, 10)}">날짜</td>
+		</tr>
+	</table>
+	
+	<h4>th:inline</h4>
+	<script th:inline="javascript">
+		var result = [[${tit}]];
+		alert(result);
+	</script>
+	
+	<table border="1">
+		<tr th:each="user:${users}">
+			<td>[[${user.uid}]]</td>
+			<td>[[${user.name}]]</td>
+			<td>[[${user.age}]]</td>
+			<td>[[${user.rdate.substring(2, 10)}]]</td>
+		</tr>
+	</table>
+	
+	<h4>th:href</h4>
+	<a th:href="@{/layout1}">타임리프 layout 실습하기</a>
+	
+	<h4>타임리프 유틸리티 객체</h4>
+	<h2 th:text="${#dates.format(now, 'yy-MM-dd')}">now</h2>
+	<h2 th:text="${#numbers.formatInteger(price, 3, 'COMMA')}">price</h2>
+	<ul>
+		<li th:each="city:${#strings.listSplit(cities, ',')}">[[${city}]]</li>
+	</ul>
+	
+</body>
+</html>
