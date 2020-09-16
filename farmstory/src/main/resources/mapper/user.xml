@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.user">
+
+	<select id="SELECT_TERMS" resultType="kr.co.farmstory.vo.TermsVO">
+		SELECT * FROM `JBOARD_TERMS`;
+	</select>
+	
+	<insert id="INSERT_USER">
+		INSERT INTO `JBOARD_MEMBER` SET 
+		`uid`=#{uid},		
+		`pass`=PASSWORD(#{pass1}),		
+		`name`=#{name},		
+		`nick`=#{nick},		
+		`email`=#{email},		
+		`hp`=#{hp},		
+		`zip`=#{zip},		
+		`addr1`=#{addr1},		
+		`addr2`=#{addr2},		
+		`regip`=#{regip},		
+		`rdate`=NOW();		
+	</insert>
+	
+	<select id="SELECT_USER_COUNT" resultType="int">
+		SELECT COUNT(*) FROM `JBOARD_MEMBER` WHERE `uid`=#{uid};
+	</select>
+	
+	<select id="SELECT_USER" resultType="kr.co.farmstory.vo.UserVO">
+		SELECT * FROM `JBOARD_MEMBER` 
+		WHERE `uid`=#{uid} AND `pass`=PASSWORD(#{pass});
+	</select>
+	
+	
+	<!-- 
+	<insert id="INSERT_USER">
+		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
+	</insert>
+	
+	<select id="SELECT_USER" resultType="">
+		SELECT * FROM `USER3` WHERE `uid`=#{uid};
+	</select>
+	
+	<select id="SELECT_USERS">
+		SELECT * FROM `USER3`;
+	</select>
+	
+	<update id="UPDATE_USER">
+		UPDATE `USER3` SET		
+		`name`=#{name},
+		`hp`=#{hp},
+		`age`=#{age} 
+		WHERE `uid`=#{uid};		
+	</update>
+	
+	<delete id="DELETE_USER">
+		DELETE FROM `USER3` WHERE `uid`=#{uid};
+	</delete>
+	 -->
+</mapper>

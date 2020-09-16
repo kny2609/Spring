@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.board">
+
+	<select id="SELECT_BOARDS" resultType="kr.co.farmstory.vo.BoardVO">
+		SELECT a.*, b.nick FROM `JBOARD_ARTICLE` AS a
+		JOIN `JBOARD_MEMBER` AS b ON a.uid = b.uid  
+		WHERE `parent`=0 AND `cate`=#{cate}
+		ORDER BY `seq` DESC 
+		LIMIT #{start}, 10;
+	</select>
+	
+	<select id="SELECT_COUNT_BOARD" resultType="int">
+		SELECT COUNT(*) FROM `JBOARD_ARTICLE` WHERE `parent`=0 AND `cate`=#{cate};
+	</select>
+	
+	<select id="SELECT_LATEST" resultType="kr.co.farmstory.vo.BoardVO">
+		SELECT * FROM `JBOARD_ARTICLE` 
+		WHERE `parent`=0 AND `cate`=#{cate} 
+		ORDER BY `rdate` DESC 
+		LIMIT 5;
+	</select>
+
+	<!--
+	<select id="SELECT_MEMBERS">
+		SELECT * FROM `MEMBER`;
+	</select>	
+	
+	<select id="SELECT_MEMBER">
+		SELECT * FROM `MEMBER` WHERE `uid`=#{uid};
+	</select>
+	
+	<update id="UPDATE_MEMBER">
+		UPDATE `MEMBER` SET 
+			`name`=#{name},
+			`hp`=#{hp},
+			`pos`=#{pos},
+			`dep`=#{dep} WHERE `uid`=#{uid};		
+	</update>
+	
+	<delete id="DELETE_MEMBER">
+		DELETE FROM `MEMBER` WHERE `uid`=#{uid};
+	</delete> -->
+	
+</mapper>
