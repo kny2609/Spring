@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			
+			$('#sortAge').click(function(e){
+				e.preventDefault();
+				
+				var hasAsc = $(this).hasClass('asc');
+				$(this).toggleClass('asc');
+				
+				var value = hasAsc ? 'asc' : 'desc' 
+				var param = {'sort': value}; 
+				
+				$.ajax({
+					url: '/Ch12/user/listSort',
+					type: 'get',
+					data: param,
+					dataType: 'json',
+					success:function(data){
+						//alert(data);
+						$('table tr.row').remove();
+						
+						$.each(data, function(i, user){
+							var row = "<tr class='row'>"
+									+ "<td>"+user.uid+"</td>"
+									+ "<td>"+user.name+"</td>"
+									+ "<td>"+user.hp+"</td>"
+									+ "<td>"+user.age+"</td>"
+									+ "<td>"
+									+ "<a href='/Ch12/user/modify?uid="+user.uid+"'>수정</a>"
+									+ "<a href='/Ch12/user/delete?uid="+user.uid+"'>삭제</a>"
+									+ "</td>"
+									+ "</tr>";
+							
+							$('table').append(row);
+						});
+					}
+				});
+			});
+		});	
+	
+	</script>
+</head>
+<body>
+	<h3>사용자 목록</h3>
+	<a th:href="@{/user/register}">등록하기</a>
+	<table border="1">
+		<tr>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>휴대폰</th>
+			<th><a href="#" id="sortAge" class="asc">나이</a></th>
+			<th>관리</th>
+		</tr>
+		<tr class="row" th:each="user:${users}">
+			<td>[[${user.uid}]]</td>
+			<td>[[${user.name}]]</td>
+			<td>[[${user.hp}]]</td>
+			<td>[[${user.age}]]</td>
+			<td>
+				<a th:href="@{/user/modify(uid=${user.uid})}">수정</a>
+				<a th:href="@{/user/delete(uid=${user.uid})}">삭제</a>
+			</td>
+		</tr>
+	</table>	
+	
+</body>
+</html>
