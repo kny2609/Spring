@@ -1,0 +1,307 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_shop.html">
+<!-- 주문결제 -->
+<section id="order" layout:fragment="content">
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script th:src="@{/js/zipcode.js}"></script>
+  <script th:inline="javascript">
+  	$(function(){
+  		$('.btnZip').click(function(){
+  			zipcode();
+  		});
+  		
+  		$('.btnApply').click(function(){
+  			
+  			var currentPoint = [[${session.member.point}]]
+  			var txtPoint = $('input[name=txtPoint]').val();
+  			
+  			if(currentPoint < txtPoint){
+  				alert('적용 포인트가 현재 포인트 보다 더 큽니다.');
+  				return;
+  			}
+  			
+  			$('.info > table tr:eq(4) > td:eq(1)').text('-'+txtPoint.toLocaleString());
+
+  			// 전체 주문금액 다시 계산
+  			var totalTg = $('.info > table tr:eq(5) > td:eq(1)');
+  			var totalPrice = [[${totalInfo.total}]]
+  			var totalPrice = totalPrice - txtPoint;
+  			
+  			totalTg.text(totalPrice.toLocaleString());
+  			
+  			// 폼전송에 사용하기 위해 입력필드에 입력
+  			$('input[name=applyPoint]').val(-txtPoint);
+  			$('input[name=total]').val(totalPrice);
+  		});
+  		
+  		// 결제하기 버튼 클릭
+  		$('input[name=btnSubmit]').click(function(){
+  			
+  			var orderer = $('input[name=orderer]');
+  			var hp      = $('input[name=hp]');
+  			var zip     = $('input[name=zip]');
+  			var addr1   = $('input[name=addr1]');
+  			var addr2   = $('input[name=addr2]');
+  			var payment = $('input[name=payment]'); 
+  			
+  			if(orderer.val() == ''){
+  				alert('주문자를 입력 해주세요.');
+  				orderer.focus();
+  				return;
+  			}
+  			
+  			if(hp.val() == ''){
+  				alert('휴대폰을 입력 해주세요.');
+  				hp.focus();
+  				return;
+  			}
+  			
+  			if(zip.val() == ''){
+  				alert('우편번호를 입력 해주세요.');
+  				zip.focus();
+  				return;
+  			}
+  			
+  			if(addr1.val() == ''){
+  				alert('기본주소를 입력 해주세요.');
+  				addr1.focus();
+  				return;
+  			}
+  			
+  			if(addr2.val() == ''){
+  				alert('상세주소를 입력 해주세요.');
+  				addr2.focus();
+  				return;
+  			}
+  			
+  			if(payment.is(':checked') == false){
+  				alert('결제방법을 선택 해주세요.');
+  				return;
+  			}
+  			
+  			// 상품정보 정리,취합
+  			var products = '';
+  			
+  			$('.row').each(function(){
+  				var code     = $(this).find('.code').val();
+  				var count    = $(this).find('.count').val();
+  				var price    = $(this).find('.price').val();
+  				var discount = $(this).find('.discount').val();
+  				var point    = $(this).find('.point').val();
+  				var delivery = $(this).find('.delivery').val();
+  				var total    = $(this).find('.total').val();
+  				  				
+  				products += String.format('{0},{1},{2},{3},{4},{5},{6}|', code, count, price, discount, point, delivery, total);
+  			});
+  			
+  			// 폼전송에 사용하기 위해 입력필드에 입력
+  			$('input[name=products]').val(products);
+  			
+  			// 최종 전송하기
+  			$('#orderForm').submit();
+  		});
+  	});
+  	
+  	// 자바스크립트 Format String 함수 
+  	// 출처 : https://bemeal2.tistory.com/275
+  	String.format = function() {
+  		let args = arguments; 
+  		return args[0].replace(/{(\d+)}/g, function(match, num) { 
+  			num = Number(num) + 1; 
+  			return typeof(args[num]) != undefined ? args[num] : match; 
+  		}); 
+  	}
+  </script>
+  
+  <!-- 제목, 페이지 네비게이션 -->
+  <nav>
+    <h1>주문결제</h1>
+    <p>
+      HOME > 장바구니 > <strong>주문결제</strong>
+    </p>
+  </nav>
+  <section>
+    <form id="orderForm" th:action="@{/shop/order}" method="post">
+        <div class="product">
+            <table>
+                <thead>
+                  <tr>
+                    <th>상품명</th>
+                    <th>총수량</th>
+                    <th>판매가</th>
+                    <th>할인</th>
+                    <th>적립포인트</th>
+                    <th>배송비</th>
+                    <th>소계</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="empty">
+                    <td colspan="7">장바구니에 상품이 없습니다.</td>
+                  </tr>
+                  <tr class="row" th:each="item:${items}">                  
+                    <td>
+                      <article>
+                      	<!-- 장바구니에 상품 seq(PK)를 지정해서 주문완료 후 장바구니에서 삭제하기 위한 가상 입력필드 -->
+                      	<input type="hidden" name="cartSeqs"   th:value="${item.seq}"/>
+                      	
+                      	<!-- 상품 문자열을 생성하기 위한  가상 입력필드 -->
+                      	<input type="hidden" class="code"     th:value="${item.code}"/>
+                      	<input type="hidden" class="count"    th:value="${item.count}"/>
+                      	<input type="hidden" class="price"    th:value="${item.price}"/>
+                      	<input type="hidden" class="discount" th:value="${item.discount}"/>
+                      	<input type="hidden" class="point"    th:value="${item.point}"/>
+                      	<input type="hidden" class="delivery" th:value="${item.delivery}"/>
+                      	<input type="hidden" class="total"    th:value="${item.total}"/>
+                        <a href="#"><img th:src="@{'/thumb/'+${item.cate1}+'/'+${item.cate2}+'/'+${item.thumb1}}" alt="thumb"></a>
+                        <div>
+                          <h2><a href="#">[[${item.name}]]</a></h2>
+                          <p></p>
+                        </div>
+                      </article>
+                    </td>
+                    <td>[[${item.count}]]</td>                    
+                    <td>[[${#numbers.formatInteger(item.price, 3, 'COMMA')}]]</td>
+                    <td>[[${item.discount}]]%</td>
+                    <td>[[${item.point}]]</td>
+                    <td th:if="${item.delivery > 0}">[[${#numbers.formatInteger(item.delivery, 3, 'COMMA')}]]</td>
+              		<td th:if="${item.delivery == 0}">무료배송</td>
+                    <td>[[${#numbers.formatInteger(item.total, 3, 'COMMA')}]]</td>
+                  </tr>
+                </tbody>
+              </table>                      
+        </div>
+        
+        <section>
+            <article class="delivery">
+              <h1>배송정보</h1>                          
+              <table>
+                <tr>
+                  <td>주문자</td>
+                  <td><input type="text" name="orderer" th:value="${session.member.name}" /></td>
+                </tr>
+                <tr>
+                  <td>휴대폰</td>
+                  <td>
+                    <input type="text" name="hp" th:value="${session.member.hp}"/>
+                    <span>- 포함 입력</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>우편번호</td>
+                  <td>
+                    <input type="text" id="zip" name="zip" th:value="${session.member.zip}"/>
+                    <input type="button" class="btnZip" value="검색"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>기본주소</td>
+                  <td>
+                    <input type="text" id="addr1" name="addr1" th:value="${session.member.addr1}"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>상세주소</td>
+                  <td>
+                    <input type="text" id="addr2" name="addr2" th:value="${session.member.addr2}"/>
+                  </td>
+                </tr>
+              </table>
+            </article>
+
+            <article class="discount">
+                <h1>할인정보</h1>
+                <div>
+                    <p>현재 포인트 : <span>[[${session.member.point}]]</span>점</p>
+                    <label>
+                        <input type="text" name="txtPoint" />점
+                        <input type="button" class="btnApply" value="적용"/>
+                    </label>
+                    <span>포인트 5,000점 이상이면 현금처럼 사용 가능합니다.</span>
+                </div>
+            </article>
+
+            <article class="payment">
+                <h1>결제방법</h1>
+                <div>
+                    <span>신용카드</span>
+                    <p>
+                        <label><input type="radio" name="payment" value="1"/>신용카드 결제</label>
+                        <label><input type="radio" name="payment" value="2"/>체크카드 결제</label>                                
+                    </p>
+                </div>
+                <div>
+                    <span>계좌이체</span>
+                    <p>
+                        <label><input type="radio" name="payment" value="3"/>실시간 계좌이체</label>
+                        <label><input type="radio" name="payment" value="4"/>무통장 입금</label>                                
+                    </p>
+                </div>
+                <div>
+                    <span>기타</span>
+                    <p>
+                        <label><input type="radio" name="payment" value="5"/>휴대폰결제</label>
+                        <label>
+                            <input type="radio" name="payment" value="6"/>카카오페이
+                            <img src="../img/ico_kakaopay.gif" alt="카카오페이"/>
+                        </label>                                
+                    </p>
+                </div>
+            </article>
+
+            <article class="alert">
+                <ul>
+                    <li><span>케이마켓의 모든 판매자는 안전거래를 위해 구매금액, 결제수단에 상관없이 모든거래에 대하여 케이마켓 유한책임회사의 구매안전서비스(에스크로)를 제공하고 있습니다.</span></li>
+                    <li><span>케이마켓 유한책임회사의 전자금융거래법에 의해 결제대금예치업 등록번호는 02-006-00008 입니다.</span></li>
+                    <li><span>등록여부는 금융감독원 홈페이지(www.fss.or.kr)의 업무자료>인허가업무안내>전자금융업등록현황에서 확인하실수 있습니다.</span></li>
+                </ul>
+            </article>
+
+            <div class="info">
+            	<!-- 주문 테이블 저장을 위한 가상 입력필드 -->                      	
+				<input type="hidden" name="uid"        th:value="${session.member.uid}"/>
+		    	<input type="hidden" name="products"   value=""/>
+				<input type="hidden" name="count"      th:value="${totalInfo.count}"/>
+				<input type="hidden" name="price"      th:value="${totalInfo.price}"/>
+				<input type="hidden" name="discount"   th:value="-${totalInfo.sale}"/>
+				<input type="hidden" name="point"      th:value="${totalInfo.point}"/>
+				<input type="hidden" name="applyPoint" value="0"/>				
+				<input type="hidden" name="delivery"   th:value="${totalInfo.delivery}"/>				
+				<input type="hidden" name="total"      value="0"/>
+				
+                <h2>최종결제 정보</h2>                
+                <table border="0">
+                  <tr>
+                    <td>총</td>
+                    <td>[[${totalInfo.count}]] 건</td>
+                  </tr>
+                  <tr>
+                    <td>상품금액</td>
+                    <td>[[${#numbers.formatInteger(totalInfo.price, 3, 'COMMA')}]]</td>
+                  </tr>
+                  <tr>
+                    <td>할인금액</td>
+                    <td>-[[${#numbers.formatInteger(totalInfo.sale, 3, 'COMMA')}]]</td>
+                  </tr>
+                  <tr>
+                    <td>배송비</td>
+                    <td>[[${#numbers.formatInteger(totalInfo.delivery, 3, 'COMMA')}]]</td>
+                  </tr>
+                  <tr>
+                    <td>포인트 할인</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>전체주문금액</td>
+                    <td>[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
+                  </tr>
+                </table>
+                <input type="button" name="btnSubmit" value="결제하기"/>
+              </div>
+        </section>                
+    </form>
+  </section>
+</section>
+
+</html>

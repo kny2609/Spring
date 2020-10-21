@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.kmarket.dao.ShopDao">
+
+	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice FROM `km_products` 
+		WHERE `cate1`=#{cate1} AND `cate2`=#{cate2}
+		<if test="sort == 1">ORDER BY `sold` DESC</if>
+		<if test="sort == 2">ORDER BY `price` ASC</if>
+		<if test="sort == 3">ORDER BY `price` DESC</if>
+		<if test="sort == 4">ORDER BY `score` DESC</if>
+		<if test="sort == 5">ORDER BY `review` DESC</if>
+		<if test="sort == 6">ORDER BY `rdate` DESC</if>
+		LIMIT #{start}, 10;
+	</select>
+	
+	<select id="selectProduct" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice FROM `km_products` 
+		WHERE `code`=#{code};
+	</select>
+	
+	<select id="selectCountProducts" resultType="int">
+		SELECT COUNT(*) FROM `km_products` WHERE `cate1`=#{cate1} AND `cate2`=#{cate2};
+	</select>
+	
+	<insert id="insertCart">
+		INSERT INTO `km_products_cart` SET
+		`uid`=#{uid},		
+		`code`=#{code},		
+		`name`=#{name},		
+		`count`=#{count},		
+		`price`=#{price},		
+		`discount`=#{discount},		
+		`point`=#{point},		
+		`delivery`=#{delivery},		
+		`total`=#{total},		
+		`rdate`=NOW();	
+	</insert>
+	
+	<select id="selectCart" resultType="kr.co.kmarket.vo.ProductsCartVo">
+		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1` FROM `km_products_cart` AS a 
+		JOIN `km_products` AS b
+		ON a.`code` = b.`code`
+		WHERE `uid`=#{uid};
+	</select>
+	
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM `km_products_cart` 
+		WHERE 
+		`seq` IN
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
+			#{seq}
+		</foreach>
+	</delete>
+	
+	<select id="selectOrder" resultType="kr.co.kmarket.vo.ProductsCartVo">
+		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1` 
+		FROM `km_products_cart` AS a
+		JOIN `km_products` AS b
+		ON a.`code` = b.`code`
+		WHERE
+		`seq` IN
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
+			#{seq}	
+		</foreach>
+	</select>
+	
+
+<!--	 
+	<insert id="insertUser">
+		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
+	</insert>
+	
+	<select id="selectUser" resultType="kr.co.ch11.vo.UserVO">
+		SELECT * FROM `USER3` WHERE `uid`=#{uid};
+	</select>
+	
+	<select id="selectUsers" resultType="kr.co.ch11.vo.UserVO">
+		SELECT * FROM `USER3`;
+	</select>
+	
+	<update id="updateUser">
+		UPDATE `USER3` SET		
+		`name`=#{name},
+		`hp`=#{hp},
+		`age`=#{age} 
+		WHERE `uid`=#{uid};		
+	</update>
+	
+	<delete id="deleteUser">
+		DELETE FROM `USER3` WHERE `uid`=#{uid};
+	</delete>
+-->	 
+</mapper>

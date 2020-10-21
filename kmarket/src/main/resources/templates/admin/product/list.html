@@ -1,0 +1,147 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_admin.html">
+	  
+   <section id="admin-product-list" layout:fragment="content">
+   	   <script>
+   	   $(function(){
+   		   
+   		   var checkAll = $('input[name=all]');
+   		   var btnCheckDel = $('#btnCheckDel');
+   		   
+   		   btnCheckDel.click(function(){
+   			   
+   			   var codes = [];
+   			   
+   			   // 체크한 체크박스 value 값 추출
+   			   $('input[name=chkProduct]:checked').each(function(){
+   				   var code = $(this).val();
+   				   codes.push(code);
+   			   });
+   			   
+   			   if(codes.length != 0){
+   				   
+   				   var param = {'codes':codes};
+   				   
+	   			   $.ajax({
+	    			   url: '/kmarket/admin/product/delete',
+	    			   type: 'get',
+	    			   data: param,
+	    			   traditional: true, // 배열 전송할 때 필요
+	    			   dataType: 'text',
+	    			   success: function(data){
+	    				   alert('삭제 상품 갯수 : '+data);
+	    				   location.replace('/kmarket/admin/product/list');
+	    			   }
+	    		   });
+   			   }else{
+   				   alert('상품을 선택하세요.')
+   			   }
+   			   
+   			   
+   			   
+   		   });
+   		   
+   		   checkAll.click(function(){
+				
+   			   var isChecked = $(this).is(':checked');
+   			   
+   			   if(isChecked){
+   				   // 체크
+   				   $('input[name=chkProduct]').attr('checked', true);
+   			   }else{
+   				   // 체크해제
+   				   $('input[name=chkProduct]').attr('checked', false);
+   			   }
+   			   
+   		   });
+   	   });
+   	   
+   	   
+   	   </script>
+       
+       
+       <nav>
+           <h3>상품목록</h3>
+           <p>
+               HOME > 상품관리 > <strong><a th:href="@{/admin/product/list}">상품목록</a></strong>
+           </p>
+       </nav>
+       <!-- 상품목록 컨텐츠 시작 -->                                
+       <section>
+           <div>
+           	   <form th:action="@{/admin/product/search}">
+	               <select name="opt">
+	                   <option value="name">상품명</option>
+	                   <option value="code">상품코드</option>
+	                   <option value="company">제조사</option>
+	                   <option value="seller">판매자</option>                                    
+	               </select>
+	               <input type="text" name="keyword"/>
+	               <input type="submit" class="search" value="검색"/>
+               </form>
+           </div>
+           <table>
+               <tr>
+                   <th><input type="checkbox" name="all"/></th>
+                   <th>이미지</th>
+                   <th>상품코드</th>
+                   <th>상품명</th>
+                   <th>판매가격</th>
+                   <th>할인율</th>
+                   <th>포인트</th>
+                   <th>재고</th>
+                   <th>판매자</th>
+                   <th>조회</th>
+                   <th>관리</th>
+               </tr>
+
+               <tr th:each="product:${products}">
+                   <td><input type="checkbox" name="chkProduct" th:value="${product.code}" /></td>
+                   <td><img th:src="@{'/thumb/'+${product.cate1}+'/'+${product.cate2}+'/'+${product.thumb1}}" class="thumb"></td>
+                   <td>[[${product.code}]]</td>
+                   <td>[[${product.name}]]</td>
+                   <td>[[${product.price}]]</td>
+                   <td>[[${product.discount}]]</td>
+                   <td>[[${product.point}]]</td>
+                   <td>[[${product.stock}]]</td>
+                   <td>[[${product.company}]]</td>
+                   <td>[[${product.etc1}]]</td>
+                   <td>
+                       <a href="#">[삭제]</a>
+                       <a href="#">[수정]</a>
+                   </td>
+               </tr>
+               
+           </table>
+
+           
+           <input type="button" id="btnCheckDel" value="선택삭제" />                          
+
+
+           <div class="paging">
+		        <span class="prev">
+		            <a href="#"><&nbsp;이전</a>
+		        </span>
+		        
+		        <span class="num">
+		            <a th:href="@{/admin/product/list(pg=${num})}"
+					   th:each="num:${#numbers.sequence(1, pageEnd)}"                
+		               th:class="${#strings.equals(num, currentPg) ? 'on' : ''}">[[${num}]]</a>
+		        </span>
+		        <span class="next">
+		            <a href="#">다음&nbsp;></a>
+		        </span>
+		    </div>
+
+       </section>                
+
+       <p class="ico info">
+           <strong>Tip!</strong>
+          	 전자상거래 등에서의 상품 등의 정보제공에 관한 고시에 따라 총 35개 상품군에 대해 상품 특성 등을 양식에 따라 입력할 수 있습니다.
+       </p>
+       
+       <!-- 상품목록 컨텐츠 끝 -->
+   </section>
+
+</html>

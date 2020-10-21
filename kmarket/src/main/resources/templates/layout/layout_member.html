@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>케이마켓::회원</title>
+    <link rel="stylesheet" th:href="@{/css/member.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="member-wrapper">
+        <header>
+            <a th:href="@{/index}"><img th:src="@{/img/header_logo.png}" alt=""></a>
+        </header>
+        <main>
+            <!-- main content 시작 -->
+            <div layout:fragment="content"></div>
+            <!-- main content 끝 -->
+        </main>  
+              
+        <!-- footer 시작 -->
+        <footer th:include="/fragments/_footer.html::_footer"></footer>
+        <!-- footer 끝 -->
+    </div>    
+</body>
+</html>

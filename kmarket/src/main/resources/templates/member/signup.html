@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_member.html">
+	  
+<div id="member-signup" layout:fragment="content">
+<script th:inline="javascript">
+	$(function(){
+		$('input.agree').click(function(){
+			// 체크여부 확인
+			
+			
+			// 회원폼 이동
+			var type = [[${type}]];
+			
+			if(type == 'normal'){
+				location.href='/kmarket/member/register';
+			}else{
+				location.href='/kmarket/member/register-seller';
+			}
+			
+		});
+	});
+</script>
+          
+	<h1>약관동의</h1>
+	<section>
+		<h3><span class="essential">(필수)</span>케이마켓 이용약관</h3>
+		<textarea class="terms" readonly>[[${termsVo.terms}]]</textarea>
+		<label><input type="checkbox" name="agree1" />동의합니다.</label>
+	</section>
+
+	<section th:if="${type=='seller'}">
+		<h3><span class="essential">(필수)</span>전자금융거래 이용약관</h3>
+		<textarea class="financial" readonly>[[${termsVo.finance}]]</textarea>
+		<label><input type="checkbox" name="agree2" />동의합니다.</label>
+	</section>
+
+	<section>
+		<h3><span class="essential">(필수)</span>개인정보 수집동의</h3>
+		<textarea class="privacy" readonly>[[${termsVo.privacy}]]</textarea>
+		<label><input type="checkbox" name="agree3" />동의합니다.</label>
+	</section>
+
+	<section>
+		<h3><span class="optional">(선택)</span>위치정보 이용약관</h3>
+		<textarea class="location" readonly>[[${termsVo.location}]]</textarea>
+		<label><input type="checkbox" name="agree4" />동의합니다.</label>
+	</section>
+
+	<div>
+		<input type="button" class="agree" value="동의하기" />
+	</div>
+</div>
+
+</html>

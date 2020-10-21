@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_member.html">
+	  
+            <div id="member-login" layout:fragment="content">
+            	<script th:inline="javascript">
+            		var success = [[${success}]];
+            		if(success == 'fail'){
+            			alert('로그인에 실패했습니다. 아이디 비밀번호를 다시 확인하십시오.');
+            		}else if(success == 'cart'){
+            			alert('장바구니 확인을 위해 로그인을 먼저 해야합니다.');
+            		}
+            	</script>
+            
+                <img th:src="@{/img/member_txt_login.gif}" alt="로그인" />
+				<form th:action="@{/member/login}" method="post">
+					<div>
+						<label>
+							<span><img th:src="@{/img/member_txt_id.gif}" alt="아이디"></span> 
+							<input type="text" name="uid" />
+						</label>
+						<label>
+							<span><img th:src="@{/img/member_txt_pass.gif}" alt="비밀번호"></span> 
+							<input type="password" name="pass" />
+						</label>
+					</div>
+					<input type="submit" value="로그인" />
+					<span>
+						<a href="#">아이디찾기</a>
+						<a href="#">비밀번호찾기</a>
+						<a th:href="@{/member/join}">회원가입</a>
+					</span>
+				</form>
+				<img th:src="@{/img/member_certifi_logo.gif}" alt="banner">
+            </div>
+
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.kmarket.admin.dao.AdminProductDao">
+
+	<select id="selectProducts" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT * FROM `km_products` LIMIT #{start}, 10;
+	</select>
+	
+	<select id="selectCountProducts" resultType="int">
+		SELECT COUNT(*) FROM `km_products`;
+	</select>
+	
+	<select id="selectProductsBySearch" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT * FROM `km_products` WHERE
+		<if test="opt.equals('name')">`name` LIKE '%${keyword}%'</if>
+		<if test="opt.equals('code')">`code`=#{keyword}</if>
+		<if test="opt.equals('company')">'company` LIKE '%${keyword}%'</if>
+		<if test="opt.equals('seller')">'seller` LIKE '%${keyword}%'</if>
+		LIMIT ${start}, 10;
+	</select>
+	
+	<delete id="deleteProduct" parameterType="int">
+		DELETE FROM `km_products` WHERE `code` IN
+		<foreach collection="array" item="code" open="(" separator="," close=")">
+			#{code}
+		</foreach>
+	</delete>
+	
+
+<!--	 
+	<insert id="insertUser">
+		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
+	</insert>
+	
+	<select id="selectUser" resultType="kr.co.ch11.vo.UserVO">
+		SELECT * FROM `USER3` WHERE `uid`=#{uid};
+	</select>
+	
+	<select id="selectUsers" resultType="kr.co.ch11.vo.UserVO">
+		SELECT * FROM `USER3`;
+	</select>
+	
+	<update id="updateUser">
+		UPDATE `USER3` SET		
+		`name`=#{name},
+		`hp`=#{hp},
+		`age`=#{age} 
+		WHERE `uid`=#{uid};		
+	</update>
+	
+	<delete id="deleteUser">
+		DELETE FROM `USER3` WHERE `uid`=#{uid};
+	</delete>
+-->	 
+</mapper>
