@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+   <header th:fragment="_header">
+      <div id="header_wrap">
+          <div id="gnb">
+              <div id="util_menu">
+                  <div class="top_left">
+                      <ul>
+                          <li><a href="#">멜론</a></li>
+                      </ul>
+                  </div>
+                  <div class="top_right">
+                      <ul>
+                          <li id="name_area"></li>
+                          <li><a href="#">로그인</a></li>
+                          <li><a href="#">회원가입</a></li>
+                          <li><a href="#">고객센터</a></li>
+                          <li><a href="#">이용안내</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <h1 id="logo"><a th:href="@{/}"><img th:src="@{/img/logo.PNG}" alt="melon 티켓"></a></h1>
+              <form action="#">
+                  <input type="text" name="search"/>
+                  <button><i class="fa fa-search" aria-hidden="true"></i></button>
+              </form>
+          </div>
+          <div id="gnb_menu">
+              <ul>
+                  <li><a href="#">홈</a></li>
+                  <li><a href="#">콘서트</a></li>
+                  <li><a href="#">뮤지컬/연극</a></li>
+                  <li><a href="#">클래식</a></li>
+                  <li><a href="#">전시/행사</a></li>
+                  <li><a href="#">테마/지역</a></li>
+                  <li><a th:href="@{/concert/rank}">랭킹</a></li>
+                  <li><a href="#">티켓오픈소식</a></li>
+                  <li><a href="#">이벤트</a></li>
+              </ul>
+              <ul>
+                  <li><a href="#">For U</a></li>
+                  <li><a href="#">마이티켓</a></li>
+              </ul>
+          </div>
+      </div>
+  </header>
+        
+</html>

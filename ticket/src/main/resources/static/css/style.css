@@ -1,0 +1,2160 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px '고딕';
+}
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111;}
+
+#wrapper {
+width: 100%;
+}
+strong {font-weight: bold;}
+
+.btn_flexible {
+    display: inline-block;
+    background: url("../img/btn_flexible.png") no-repeat;
+}
+
+/* 헤더 영역*/
+header {display: block;}
+#header_wrap {
+    width: 1020px;
+    min-height: 154px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#header_wrap #gnb {
+    display: block;
+    width: 100%;
+    height: 112px;
+}
+#header_wrap #util_menu {
+    overflow: visible;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+}
+#header_wrap #util_menu .top_left {float: left;}
+#header_wrap #util_menu .top_left > ul {float: left; overflow: hidden;}
+#header_wrap #util_menu .top_left > ul > li {float: left;}
+#header_wrap #util_menu .top_left > ul > li > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 38px;
+    height: 29px;
+    color: #666;
+    line-height: 29px;
+    font-weight: bold;
+    background-position: -7px 0;
+}
+#header_wrap #util_menu .top_right {float: right;}
+#header_wrap #util_menu .top_right ul {float: left;}
+#header_wrap #util_menu .top_right ul > li {float: left; overflow: hidden;}
+#header_wrap #util_menu .top_right ul #name_area {
+    color: #333;
+    height: 29px;
+    padding: 9px 14px 0 0;
+}
+#header_wrap #util_menu .top_right ul > li > a {
+    line-height: 29px;
+    font-weight: bold;
+}
+#header_wrap #util_menu .top_right ul > li:nth-child(2) > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 59px;
+    height: 29px;
+    background-position: -740px 0;
+    text-align: center;
+}
+#header_wrap #util_menu .top_right ul > li:nth-child(3) > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 79px;
+    height: 29px;
+    background-position: -799px 0;
+    text-align: center;
+}
+#header_wrap #util_menu .top_right ul > li:nth-child(4) > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 79px;
+    height: 29px;
+    background-position: -870px 0;
+    text-align: center;
+}
+#header_wrap #util_menu .top_right ul > li:nth-child(5) > a {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 67px;
+    height: 29px;
+    background-position: -941px -116px;
+    margin-right: 4px;
+    text-align: center;
+}
+#header_wrap #logo {
+    float: left;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+#header_wrap #gnb > form {
+    position: absolute;
+    float: left;
+    display: inline-block;
+    width: 272px;
+    height: 36px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 18px;
+    padding-right: 55px;
+    vertical-align: top;
+}
+#header_wrap #gnb > form > input {
+    position: absolute;
+    width: 100%;
+    height: 37px;
+    border: 1.2px solid #41d26b;
+    border-radius: 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+#header_wrap #gnb > form > button {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    background: #fff;
+    border: none;
+    font-size: 20px;
+    color: #41d26b;
+    outline: none;
+}
+#header_wrap #gnb_menu {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 42px;
+    font-size: 0;
+    line-height: 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+#header_wrap #gnb_menu > ul:nth-child(1) {float: left;}
+#header_wrap #gnb_menu > ul:nth-child(1) > li {float: left; padding: 0 8px 0 8px;}
+#header_wrap #gnb_menu > ul:nth-child(2) {float: right;}
+#header_wrap #gnb_menu > ul:nth-child(2) > li {float: left; padding: 0 8px 0 8px;}
+#header_wrap #gnb_menu > ul > li > a {
+    display: block;
+    margin-right: 7px;
+    margin-left: 7px;
+    line-height: 42px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+/* 메인 영역*/
+main {
+    display: block;
+    overflow: visible;
+    width: auto;
+    min-height: 600px;
+    margin: 0 auto;
+}
+.main_slider {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 34px;
+}
+.main_slider #slider {
+    position: relative;
+    width: 1020px;
+    margin: 0 auto;
+}
+.main_slider .prev {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100%;
+    height: 246px;
+    padding-top: 150px;
+    padding-right: 30px;
+    z-index: 20;
+    margin-right: -91px;
+}
+.main_slider .prev span > i {
+    float: right;
+    display: block;
+    overflow: hidden;
+    font-size: 120px;
+    text-align: center;
+    line-height: 120px;
+    width: 120px;
+    height: 120px;
+}
+.main_slider .next {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 246px;
+    padding-top: 150px;
+    padding-left: 30px;
+    z-index: 20;
+    margin-left: -91px;
+}
+.main_slider .next span > i {
+    float: left;
+    display: block;
+    overflow: hidden;
+    font-size: 120px;
+    text-align: center;
+    line-height: 120px;
+    width: 120px;
+    height: 120px;
+}
+.main_slider .slider_inner {
+    position: relative;
+    width: 1020px;
+    height: 396px;
+    margin: 0 auto;
+}
+.main_slider .list_slider {
+    position: absolute;
+    margin-left: -21px;
+    width: 3797px;
+    left: -1076px;
+}
+.main_slider .list_slider li {
+    position: relative;
+    float: left;
+    width: 269px;
+    height: 396px;
+    padding: 0 2px 0 3px;
+}
+.main_slider .list_slider a {display: block;}
+.main_slider .list_slider .thumb {
+    display: block;
+    position: relative;
+    width: 256px;
+    height: 320px;
+    padding: 6px 6px 0 7px;
+    overflow: hidden;
+}
+.main_slider .list_slider li img {width: 256px;}
+.main_slider .list_slider .thumb .frame {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 7px;
+}
+.main_slider .list_slider .on .thumb .thumb_off .frame {
+    background: none;
+    width: 254px;
+    height: 318px;
+    opacity: 0.03px;
+}
+.main_slider .list_slider .txt {
+    display: block;
+    padding: 12px 0 0;
+    height: 58px;
+}
+.main_slider .list_slider .txt .name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-bottom: 4px;
+    padding: 0 7px;
+}
+.main_slider .list_slider .txt .opt {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    color: #888;
+    text-align: center;
+}
+
+
+/* 메인 conts_section */
+#conts {
+    display: block;
+    overflow: visible;
+    position: relative;
+    width: 1008px;
+    min-height: 600px;
+    padding: 0 20px 53px;
+    margin: 0 auto;
+}
+
+/* main_performance */
+.main_performance {
+    display: block;
+    overflow: hidden;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+}
+.main_performance .list_main_performance {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 73px 0 23px;
+}
+.main_performance .list_main_performance .nth1 .tit {
+    left: 0;
+    width: 335px;
+    border-left: 0 none;
+}
+.main_performance .list_main_performance .nth2 .tit {
+    left: 335px;
+    width: 335px;
+}
+.main_performance .list_main_performance .nth3 .tit {
+    left: 671px;
+    width: 334px;
+}
+.main_performance .list_main_performance .on .tit {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+.main_performance .list_main_performance .on .tit a {color: #000;}
+.main_performance .list_main_performance .tit {
+    position: absolute;
+    top: 0;
+    height: 48px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #eee;
+}
+.main_performance .list_main_performance .tit a {
+    display: block;
+    height: 48px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 48px;
+    color: #333;
+    text-align: center;
+}
+.main_performance .list_main_performance .on .box_cont {
+    display: block;
+    padding: 0 5px;
+}
+.main_performance .list_main_performance .box_cont {display: none;}
+.main_performance .list_main_performance .box_cont ul {
+    display: block;
+    overflow: hidden;
+    width: 965px;
+    margin: 0 auto;
+}
+.main_performance .list_main_performance .box_cont ul li {
+    float: left;
+    width: 161px;
+    padding: 0 16px;
+}
+.main_performance .list_main_performance .box_cont .thumb {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 160px;
+    height: 225px;
+}
+.main_performance .list_main_performance .box_cont .thumb a {display: block;}
+.main_performance .list_main_performance .box_cont .thumb img {
+    width: 160px;
+    vertical-align: top;
+}
+.main_performance .list_main_performance .box_cont .txt {
+    display: block;
+    overflow: hidden;
+    height: 36px;
+    line-height: 36px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0;
+}
+.main_performance .list_main_performance .box_cont .txt a {
+    color: #333;
+    font-size: 14px;
+}
+
+/* main_banner */
+.main_banner {
+    margin-top: 20px;
+}
+.main_banner a {
+    display: block;
+    height: 100px;
+}
+
+/* main_float */
+.main_float {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+/* 티켓오픈소식 */
+.main_float .box_ticket_open {
+    float: left;
+    position: relative;
+    width: 320px;
+    height: 435px;
+    margin-top: 15px;
+    margin-left: 0;
+}
+.main_float .tit_main_float {
+    display: block;
+    width: 100%;
+    height: 54px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 54px;
+}
+.main_float .box_ticket_open .list_ticket_open {
+    display: block;
+    overflow: hidden;
+    width: 278px;
+    height: 396px;
+    padding: 0 20px;
+    border: 1px solid #eee;
+}
+.main_float .box_ticket_open .list_ticket_open li {
+    border-top: 1px solid #eee;
+}
+.main_float .box_ticket_open .list_ticket_open .nth1 {
+    border-top: 0 none;
+}
+.main_float .box_ticket_open .list_ticket_open .inner_ico {
+    padding: 16px 0 15px;
+}
+.main_float .box_ticket_open .list_ticket_open .inner {
+    display: block;
+    padding: 15px 0;
+}
+.main_float .box_ticket_open .list_ticket_open .inner_ico .ico {
+    display: block;
+    overflow: hidden;
+    height: 28px;
+}
+.main_float .box_ticket_open .list_ticket_open .inner_ico .ico span {
+    display: inline-block;
+    padding: 0 5px;
+    margin-top: 6px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+}
+.main_float .box_ticket_open .list_ticket_open .inner_ico .ico1 {
+    background-color: #41d26b;
+}
+.main_float .box_ticket_open .list_ticket_open .inner_ico .txt {
+    display: block;
+    height: 18px;
+    padding-top: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main_float .box_ticket_open .list_ticket_open .txt {
+    display: block;
+    overflow: hidden;
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    letter-spacing: 0;
+}
+.main_float .box_ticket_open .list_ticket_open .more {
+    display: block;
+    padding-top: 4px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #888;
+    letter-spacing: 0;
+}
+/* 더보기 */
+.main_float .ctr {
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+.main_float .ctr > a {
+    display: inline-block;
+    height: 30px;
+    padding-right: 12px;
+    font-size: 13px;
+    line-height: 30px;
+    color: #888;
+}
+
+/* For U */
+.main_float .box_for_u {
+    float: left;
+    position: relative;
+    width: 320px;
+    height: 435px;
+    margin-top: 15px;
+    margin-left: 24px;
+}
+.main_float .box_for_u .inner {
+    display: block;
+    width: 318px;
+    height: 396px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+.main_float .box_for_u .inner p {
+    display: block;
+    overflow: hidden;
+    padding-top: 33px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #333;
+    text-align: center;
+}
+.main_float .box_for_u .inner strong {
+    display: block;
+    overflow: hidden;
+    padding-top: 15px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666;
+    text-align: center;
+}
+.main_float .box_for_u .inner strong span {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #00b523;
+}
+.main_float .box_for_u .inner .thumb {
+    display: block;
+    position: relative;
+    margin: 51px auto 48px;
+}
+.main_float .box_for_u .inner > a {
+    display: inline-block;
+    overflow: hidden;
+    height: 43px;
+    padding: 0 0 0 25px;
+    border: 1.2px solid #888;
+    border-radius: 26px;
+}
+.main_float .box_for_u .inner > a > span {
+    display: inline-block;
+    overflow: hidden;
+    padding: 11px 37px 11px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    text-align: center;
+    vertical-align: top;
+}
+
+/* 랭킹 */
+.main_float .box_ranking {
+    float: left;
+    position: relative;
+    width: 320px;
+    height: 435px;
+    margin-top: 15px;
+    margin-left: 24px;
+    margin-bottom: 22px;
+}
+.main_rank {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+.main_rank .list_main_rank {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 46px 0 0 0;
+}
+.main_rank .list_main_rank .tit {
+    position: absolute;
+    top: 0;
+    height: 44px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+}
+.main_rank .list_main_rank .on .tit {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+.main_rank .list_main_rank .nth1 .tit {
+    left: 0;
+    width: 111px;
+    border-left: 0 none;
+}
+.main_rank .list_main_rank .nth2 .tit {
+    left: 111px;
+    width: 90px;
+}
+.main_rank .list_main_rank .nth3 .tit {
+    left: 202px;
+    width: 115px;
+}
+.main_rank .list_main_rank .on .tit a {color: #00b523;}
+.main_rank .list_main_rank .tit a {
+    display: block;
+    height: 44px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 44px;
+    color: #888;
+    text-align: center;
+}
+.main_rank .list_main_rank .on .box_cont {
+    display: block;
+    padding: 0 20px;
+}
+.main_rank .list_main_rank .box_cont {display: none;}
+.main_rank .list_main_rank .list_ranking {
+    display: block;
+    overflow: hidden;
+    width: 278px;
+    height: 351px;
+    margin: 0 auto;
+}
+.main_rank .list_main_rank .list_ranking .nth1 {padding-top: 14px;}
+.main_rank .list_main_rank .list_ranking .item {
+    display: block;
+    position: relative;
+    padding: 0 0;
+}
+.main_rank .list_main_rank .list_ranking .nth1 .inner {border-top: 0 none;}
+.main_rank .list_main_rank .list_ranking .inner {
+    display: block;
+    height: 89px;
+    padding: 9px 0px 9px 112px;
+    border-top: 1px solid #eee;
+}
+.main_rank .list_main_rank .list_ranking .ranking {
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 16px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333;
+    text-align: center;
+}
+.main_rank .list_main_rank .list_ranking .change {
+    display: block;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 19px;
+    height: 20px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #888;
+    text-align: center;
+}
+.main_rank .list_main_rank .list_ranking .tit_cont {
+    display: block;
+    overflow: hidden;
+    height: 36px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: normal;
+    padding-top: 3px;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.main_rank .list_main_rank .list_ranking .day {
+    display: block;
+    overflow: hidden;
+    height: 17px;
+    padding-top: 10px;
+    font-size: 13px;
+    line-height: 17px;
+    color: #888;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0;
+}
+.main_rank .list_main_rank .list_ranking .lacation {
+    display: block;
+    overflow: hidden;
+    height: 18px;
+    padding-top: 0;
+    font-size: 13px;
+    line-height: 18px;
+    color: #888;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main_rank .list_main_rank .list_ranking .thumb {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 31px;
+    width: 66px;
+    height: 89px;
+}
+
+/* main_concert */
+.main_concert {padding-top: 28px;}
+.main_concert > h2 {
+    display: block;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    color: #333;
+}
+.main_concert .list_main_concert {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: -30px;
+}
+.main_concert .list_main_concert li.first {
+    margin-left: 0;
+    padding-right: 1px;
+}
+.main_concert .list_main_concert li {
+    float: left;
+    margin-left: 29px;
+    padding-top: 30px;
+}
+.main_concert .list_main_concert .inner {
+    display: block;
+    width: 180px;
+    height: 358px;
+    padding: 24px 24px 21px;
+    border: 1px solid #eee;
+}
+.main_concert .list_main_concert .thumb {
+    display: block;
+    position: relative;
+    width: 180px;
+    height: 250px;
+    overflow: hidden;
+}
+.main_concert .list_main_concert .thumb img {width: 180px;}
+.main_concert .list_main_concert .tit {
+    display: block;
+    overflow: hidden;
+    height: 20px;
+    padding: 13px 0 9px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main_concert .list_main_concert .day {
+    display: block;
+    overflow: hidden;
+    height: 18px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main_concert .list_main_concert .lacation {
+    display: block;
+    overflow: hidden;
+    height: 20px;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #888;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.main_concert .list_main_concert .stat {
+    display: block;
+    overflow: hidden;
+    height: 20px;
+    padding-top: 8px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #00cd3c;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+/* 공지사항 푸터 영역*/
+.footer_notice {
+    overflow: hidden;
+    width: 1020px;
+    height: auto;
+    margin: 0 auto;
+    padding: 13px 0;
+    border-top: 1px solid #eee;
+}
+.footer_notice > strong {
+    float: left;
+    font-size: 13px;
+    margin-right: 40px;
+    font-weight: normal;
+    color: #000;
+}
+.footer_notice > ul {margin-left: 44px;}
+.footer_notice > ul > li > p > a {
+    font-size: 13px;
+    margin-right: 30px;
+    color: #666;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    max-width: 577px;
+    padding-right: 5px;
+}
+.footer_notice > ul > li > p > span {
+    font-size: 11px;
+    color: #666;
+    vertical-align: middle;
+}
+
+/* 푸터 영역*/
+footer {
+    width: 1020px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+.footer_quick_link {
+    overflow: hidden;
+    padding: 15px 0 14px;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #b8b8b8;
+}
+.footer_quick_link .box1 {
+    float: left;
+    font-size: 0;
+    width: 380px;
+}
+.footer_quick_link .box1 > a {
+    display: inline-block;
+    width: 60px;
+    height: 22px;
+    margin-right: 23px;
+    margin-left: 0;
+    font-size: 0;
+    background: url("../img/logo2.PNG") no-repeat 0 0;
+
+}
+.footer_quick_link .box2 {
+    float: right;
+    padding-top: 4px;
+    width: 360px;
+    text-align: right;
+}
+.footer_quick_link .box2 > a {
+    display: inline-block;
+    font-weight: bold;
+    color: #666;
+    margin-left: 30px;
+}
+.footer_quick_link .box2 > span {
+    display: inline-block;
+    font-weight: bold;
+    color: #666;
+    margin-left: 30px;
+}
+.inner_footer {
+    position: relative;
+    padding-right: 150px;
+}
+.inner_footer ul {
+    display: block;
+    overflow: visible;
+    width: auto;
+    padding: 23px 0 26px;
+    clear: both;
+}
+.inner_footer > ul > li {float: left;}
+.inner_footer > ul > li:nth-child(1) > a {
+    padding-left: 0;
+    padding-right: 7px;
+    border: none;
+}
+.inner_footer > ul > li > a {
+    display: inline-block;
+    padding: 0 9px;
+    line-height: 12px;
+    letter-spacing: 0;
+    color: #202020;
+    border-left: 1px solid #e9e9e9;
+}
+.inner_footer > p {
+    color: #909090;
+}
+.inner_footer > p > span {
+    display: inline-block;
+    padding: 0 17px 4px 0;
+    letter-spacing: 0;
+}
+.inner_footer > p > strong {padding-right: 17px;}
+.inner_footer > p > a {
+    display: inline-block;
+    color: #505050;
+    padding-right: 17px;
+}
+.inner_footer .safe_service {
+    position: absolute;
+    right: -2px;
+    top: 23px;
+    width: 220px;
+}
+.inner_footer .safe_service dl dt {
+    font-weight: bold;
+    color: #505050;
+    padding-bottom: 4px;
+}
+.inner_footer .safe_service dl dd {
+    font-size: 11px;
+    color: #909090;
+    line-height: 16px;
+}
+.inner_footer .safe_service dl dd a {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: #505050;
+    padding-right: 9px;
+}
+footer .ban {padding: 29px 0 31px;}
+
+/* 오른쪽 하단 상단 이동버튼 */
+#top {
+    position: fixed;
+    left: 45%;
+    bottom: 10px;
+    margin-left: 600px;
+    /* display: none; */
+    width: 54px;
+    height: 54px;
+    background-image: url('../img/top.png');
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*view*/
+body {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    letter-spacing: -1px;
+}
+main {
+    display: block;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+.section_detailview_product {
+    position: relative;
+    padding-top: 40px;
+}
+.concert_product {
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+/* 상품 상세정보 - 이미지 */
+.concert_product .concert_cont {
+    overflow: hidden;
+    position: relative;
+    padding: 30px 30px 20px;
+}
+.concert_product .concert_cont .box_concert_thumb {
+    float: left;
+    width: 180px;
+    height: 254px;
+    overflow: hidden;
+}
+.concert_product .concert_cont .box_concert_thumb img {width: 180px;}
+/* 상품 상세정보 - 설명 */
+.concert_product .concert_cont .box_concert_text {
+    float: right;
+    padding-left: 30px;
+    width: 736px;
+    min-height: 254px;
+}
+.concert_product .concert_cont .box_concert_text .point {
+    display: inline-block;
+    height: 22px;
+    vertical-align: top;
+}
+.ico_list_b {
+    display: inline-block;
+    overflow: hidden;
+    height: 16px;
+    padding: 3px 7px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: #41d26b;
+}
+.concert_product .concert_cont .box_concert_text .tit {
+    padding: 3px 170px 0 0;
+    font-size: 26px;
+    line-height: 32px;
+    color: #333;
+}
+.concert_product .concert_cont .box_concert_text .tit_s {
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #666;
+    padding-right: 170px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.concert_product .concert_cont .box_concert_info {
+    overflow: hidden;
+    padding-top: 48px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #666;
+}
+.concert_product .concert_cont .box_concert_info .info_left {
+    overflow: hidden;
+    float: left;
+    width: 320px;
+    height: 96px;
+}
+.concert_product .concert_cont .box_concert_info .info_left .tit_info {
+    float: left;
+    width: 67px;
+    height: 32px;
+    font-size: 14px;
+}
+.concert_product .concert_cont .box_concert_info .info_left .txt_info {
+    padding-left: 67px;
+    height: 32px;
+    font-size: 14px;
+}
+.concert_product .concert_cont .box_concert_info .info_right {
+    overflow: hidden;
+    float: left;
+    width: 416px;
+    height: 96px;
+}
+.concert_product .concert_cont .box_concert_info .info_right .tit_info {
+    float: left;
+    width: 67px;
+    height: 32px;
+    font-size: 14px;
+}
+.concert_product .concert_cont .box_concert_info .info_right .txt_info {
+    padding-left: 67px;
+    height: 32px;
+    font-size: 14px;
+}
+.concert_product .concert_cont .box_concert_info .link {
+    display: inline-block;
+    color: #666;
+    vertical-align: top;
+}
+.concert_product .concert_cont .box_concert_info .info_right .txt_info > a > span{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    vertical-align: text-bottom;
+    font-size: 14px;
+    color: #666;
+}
+.concert_product .concert_cont .box_concert_info .info_right > dd:nth-child(6) > a {
+    border: 1px solid #666;
+    padding: 4px 4px;
+}
+.concert_product .concert_cont .link_sns {
+    float: left;
+    padding: 10px 0 0 125px;
+}
+.link_sns .fw {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #ccc;
+}
+.link_sns .fw .ico {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url('../img/link_sns_fw.PNG') no-repeat;
+}
+.link_sns .tw {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: -1px;
+    border: 1px solid #ccc;
+}
+.link_sns .tw .ico {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url('../img/link_sns_tw.PNG') no-repeat;
+}
+/* 공연플래너 담기 */
+.concert_product .concert_cont .btn_add_planer {
+    display: inline;
+    position: absolute;
+    top: 50px;
+    right: 29px;
+    cursor: pointer;
+}
+.btn_add_planer {
+    display: inline-block;
+    overflow: hidden;
+    width: 160px;
+    height: 42px;
+    text-align: left;
+    border: 1px solid #888;
+    border-radius: 32px;
+}
+.btn_add_planer > span {
+    display: inline-block;
+    overflow: hidden;
+    height: 19px;
+    padding: 11px 18px 12px 34px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #666;
+    vertical-align: top;
+}
+
+/* 예매하기 상자 */
+.ticketing_process {position: relative;}
+.ticketing_process .box_ticketing_process {overflow: hidden;}
+.ticketing_process .box_ticketing_process .date_choice {
+    position: relative;
+    float: left;
+    width: 336px;
+    text-align: center;
+}
+/* 날짜 선택 */
+.ticketing_process .box_ticketing_process .date_choice {
+    position: relative;
+    float: left;
+    width: 336px;
+    text-align: center;
+}
+.ticketing_process .box_ticketing_process .tit_date_choice {
+    width: 336px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ticketing_process .box_ticketing_process .tit_date_choice > span {
+    font-size: 16px;
+    font-weight: bold;
+}
+.ticketing_process .box_ticketing_process .tit_process {
+    padding: 16px 0;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    text-align: center;
+    height: 16px;
+}
+.ticketing_process .box_ticketing_process .sorting {
+    position: absolute;
+    top: 16px;
+    left: 30px;
+    overflow: hidden;
+    width: 49px;
+    height: 20px;
+}
+.ticketing_process .box_ticketing_process .sorting .type_cal {
+    float: left;
+    width: 17px;
+    height: 20px;
+    background: none;
+    border: 0 none;
+}
+.ticketing_process .box_ticketing_process .sorting .type_list {
+    float: right;
+    width: 17px;
+    height: 20px;
+    background: none;
+    border: 0 none;
+}
+.ticketing_process .box_ticketing_process .cont_process {
+    height: 216px;
+    background-color: #fafafa;
+}
+.ticketing_process .box_ticketing_process .date_choice .box_type_list {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 216px;
+    border-right: 1px solid #ebebeb;
+}
+.ticketing_process .box_ticketing_process .date_choice .list_type {
+    position: relative;
+    padding: 12px 0 15px 30px;
+    width: 275px;
+}
+.ticketing_process .box_ticketing_process .date_choice .list_type li.first {border-top: 0;}
+.ticketing_process .box_ticketing_process .date_choice .list_type li {
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.ticketing_process .box_ticketing_process .date_choice .list_type li button {
+    background-color: #fff;
+    border: 1px solid #41d26b;
+    margin: -1px 0;
+    width: 237px;
+}
+.ticketing_process .box_ticketing_process .date_choice .list_type li .txt {
+    display: block;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #00b523;
+    letter-spacing: 0;
+}
+/* 시간 선택 */
+.ticketing_process .box_ticketing_process .time_choice {
+    float: left;
+    width: 346px;
+    text-align: center;
+}
+.ticketing_process .box_ticketing_process .tit_time_choice {width: 346px;}
+.ticketing_process .box_ticketing_process .tit_time_choice > span {
+    width: 61px;
+    height: 16px;
+    margin-left: 304px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ticketing_process .box_ticketing_process .time_choice .cont_process {position: relative;}
+.ticketing_process .box_ticketing_process .time_choice .box_type_list {
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #fafafa;
+    height: 216px;
+}
+.ticketing_process .box_ticketing_process .time_choice .list_type {
+    padding: 12px 0 15px 30px;
+    width: 275px;
+}
+.ticketing_process .box_ticketing_process .time_choice .list_type li {
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+.ticketing_process .box_ticketing_process .time_choice .list_type li.first {border-top: 0;}
+.ticketing_process .box_ticketing_process .time_choice .list_type li button {
+    width: 237px;
+    background-color: #fff;
+    border: 1px solid #41d26b;
+    margin: -1px 0;
+}
+.ticketing_process .box_ticketing_process .time_choice .list_type li .txt {
+    display: block;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    color: #00b523;
+    letter-spacing: 0;
+}
+/* 자리 선택 */
+.ticketing_process .box_ticketing_process .seat_choice {
+    float: left;
+    width: 324px;
+    text-align: center;
+}
+.ticketing_process .box_ticketing_process .tit_seat_choice {width: 346px;}
+.ticketing_process .box_ticketing_process .tit_seat_choice > span {
+    width: 89px;
+    height: 16px;
+    margin-right: 304px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list {
+    text-align: left;
+    height: 178px;
+    padding: 12px 0 0 35px;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .seat_text {
+    color: #000;
+    padding: 12px 0 8px 0;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 146px;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat li {
+    letter-spacing: 0;
+    padding-bottom: 12px;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat li .txt {
+    display: block;
+    overflow: hidden;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat li .txt .in {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    width: 200px;
+    font-size: 12px;
+    color: #666;
+    vertical-align: top;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat li .txt .in span {
+    display: inline-block;
+    float: left;
+    max-width: 130px;
+    text-align: left;
+    padding: 0;
+    line-height: 18px;
+}
+.ticketing_process .box_ticketing_process .seat_choice .cont_process .box_type_list .list_seat li .txt .in strong {
+    display: inline-block;
+    float: right;
+    width: auto;
+    font-weight: normal;
+    text-align: right;
+}
+/* 예매하기 버튼 */
+.btn_ticketing_type {
+    position: relative;
+    display: block;
+    height: 49px;
+    padding: 10px 30px 10px 30px;
+    border-top: 1px solid #ddd;
+}
+.btn_ticketing_type .btn_table {
+    display: table;
+    width: 100%;
+}
+.btn_ticketing_type .box_txt {
+    display: table-cell;
+    text-align: center;
+    font-size: 17px;
+    line-height: 24px;
+    color: #00cd3c;
+    padding-top: 12px;
+    vertical-align: top;
+}
+.btn_ticketing_type .box_btn {
+    display: table-cell;
+    width: 260px;
+}
+.btn_ticketing_type .box_btn .btColorGreen {
+    display: inline-block;
+    width: 260px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #41d26b;
+    background: #41d26b;
+}
+.btn_ticketing_type .box_btn .btColorGreen > span {
+    display: inline-block;
+    height: 48px;
+    line-height: 46px;
+    font-size: 16px;
+}
+/* 상세정보 */
+.detail_tab {
+    overflow: hidden;
+    padding-top: 20px;
+}
+.detail_tab .list_detail_menu {
+    width: 1008px;
+    height: 51px;
+    background: #fafafa;
+}
+.detail_tab .list_detail_menu li {
+    float: left;
+    width: 168px;
+    height: 51px;
+    text-align: center;
+    vertical-align: top;
+    position: relative;
+    letter-spacing: 0;
+}
+.detail_tab .list_detail_menu li a {
+    display: block;
+    height: 51px;
+}
+.detail_tab .list_detail_menu li.on .line {border-bottom: 1px solid #00cd3c;}
+.detail_tab .list_detail_menu li a .line {
+    display: inline-block;
+    height: 32px;
+    line-height: 51px;
+    padding: 18px 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+.detail_tab .list_detail_menu li.on a .line .menu {
+    color: #222;
+}
+.detail_tab .list_detail_menu li a .line .menu {
+    display: inline-block;
+    width: 75px;
+    height: 16px;
+    vertical-align: top;
+    font-size: 15px;
+    font-weight: bold;
+    color: #888;
+}
+/* 출연진 */
+.detailview_cont {overflow: hidden;}
+.detailview_cont .detail_left_cont {
+    float: left;
+    overflow: hidden;
+    width: 702px;
+}
+.detailview_cont .detail_left_cont .box_artist_checking {
+    position: relative;
+    margin-top: 22px;
+}
+.detailview_cont .detail_left_cont .tit_sub_float {margin-left: 2px;}
+.tit_sub_float {
+    display: block;
+    width: 100%;
+    height: 54px;
+    font-size: 20px;
+    color: #000;
+    text-align: left;
+    line-height: 54px;
+}
+.detailview_cont .detail_left_cont .box_artist_checking .scroll {
+    height: 150px;
+    overflow: hidden;
+}
+.detailview_cont .detail_left_cont .box_artist_checking .list_artist {
+    padding: 12px 11px 0;
+    margin-left: -55px;
+    margin-right: -20px;
+}
+.detailview_cont .detail_left_cont .box_artist_checking .list_artist li {
+    float: left;
+    width: 74px;
+    height: 138px;
+    margin: 0 0 32px 42px;
+}
+.detailview_cont .detail_left_cont .box_artist_checking .list_artist li.first {margin-left: 42px;}
+.detailview_cont .detail_left_cont .box_artist_checking .list_artist li .txt_name {
+    display: block;
+    font-size: 16px;
+    flex-shrink: 31px;
+    color: #333;
+    text-align: center;
+}
+.detailview_cont .detail_left_cont .box_artist_checking .list_artist li .singer {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 74px;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 30px;
+    color: #333;
+}
+/* 공연시간 */
+.detailview_cont .detail_left_cont .box_concert_time {margin-top: 38px;}
+.detailview_cont .detail_left_cont .box_concert_time p:last-child > span {
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #666;
+    letter-spacing: -1px;
+}
+
+/* 가격정보 */
+.detailview_cont .detail_left_cont .box_price {margin-top: 36px;}
+.tit_sub_ss_float {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 54px;
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat {
+    padding: 10px 0 10px 19px;
+    margin-top: -8px;
+    border: 1px solid #f7f7f7;
+    background-color: #fbfbfb;
+    overflow: hidden;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat li {
+    display: inline-block;
+    position: relative;
+    width: 49%;
+    height: 28px;
+    vertical-align: middle;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat li > span {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 28px;
+    color: #333;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat li .seat_color {
+    width: 15px;
+    height: 15px;
+    margin: 6px 7px 7px 0;
+    background: #BEA886;
+    vertical-align: middle;
+    font-size: 0px;
+    color: #BEA886;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat li .seat_name {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    max-width: 205px;
+    padding-right: 1px;
+}
+.detailview_cont .detail_left_cont .box_price .list_seat li .price {
+    float: right;
+    padding-right: 20px;
+    color: #888;
+    vertical-align: middle;
+    letter-spacing: 0;
+}
+/* 예매 공지사항 */
+.detailview_cont .detail_left_cont .box_ticket_notice {margin-top: 33px;}
+
+/* 작품설명 */
+.detailview_cont .detail_left_cont .box_img_content {margin-top: 40px;}
+.detailview_cont .detail_left_cont .box_img_content img {
+    max-width: 700px;
+    border: 1px solid #eee;
+}
+
+/* 기획사 정보 */
+.detailview_cont .detail_left_cont .box_agency {
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+/* 상품정보제공 고시 */
+.detailview_cont .detail_left_cont .box_product_notice {margin-top: 32px;}
+.detailview_cont .detail_left_cont .box_product_notice .tbl_product_notice {
+    table-layout: fixed;
+    border: 1px solid #e9e9e9;
+    border-spacing: 0;
+    margin-top: 4px;
+    border-collapse: collapse;
+}
+.detailview_cont .detail_left_cont .box_product_notice .tbl_product_notice tr th {
+    width: 127px;
+    padding-left: 20px;
+    background-color: #fafafa;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 40px;
+    color: #333;
+    text-align: left;
+    vertical-align: top;
+}
+.detailview_cont .detail_left_cont .box_product_notice .tbl_product_notice tr td {
+    padding: 0 30px;
+    font-size: 14px;
+    line-height: 40px;
+    color: #333;
+    text-align: left;
+    font-weight: normal;
+    vertical-align: top;
+}
+.detailview_cont .detail_left_cont .box_product_notice .tbl_product_notice tr td .box_tbl_cancel {
+    margin-top: 13px;
+    overflow: hidden;
+}
+.detailview_cont .detail_left_cont .box_product_notice .box_tbl_cancel  .list_info {
+    overflow: hidden;
+    margin: 0 0 26px;
+}
+.detailview_cont .detail_left_cont .box_product_notice .box_tbl_cancel  .list_info li {
+    margin-left: 6px;
+    font-size: 13px;
+    line-height: 26px;
+    color: #333;
+    text-indent: -6px;
+}
+.detailview_cont .detail_left_cont .box_product_notice .box_tbl_cancel  .tbl_cancel {
+    width: 100%;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.detailview_cont .detail_left_cont .box_product_notice .box_tbl_cancel  .tbl_cancel tr th {
+    background-color: #fafafa;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 40px;
+    color: #333;
+    text-align: center;
+}
+.detailview_cont .detail_left_cont .box_product_notice .box_tbl_cancel  .tbl_cancel tr td {
+    font-size: 13px;
+    line-height: 30px;
+    color: #333;
+    letter-spacing: 0;
+    padding: 0 15px;
+}
+/* 관련음악 */
+.detailview_cont .detail_right_cont {
+    float: left;
+    overflow: hidden;
+    width: 280px;
+    margin-left: 26px;
+}
+.detailview_cont .detail_right_cont .tit_sub_float {
+    height: auto;
+    line-height: inherit;
+    margin-left: 2px;
+}
+.detailview_cont .detail_right_cont .box_music_list {
+    position: relative;
+    margin-top: 20px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music {
+    overflow: hidden;
+    margin-top: 3px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li {display: block;}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .box {
+    overflow: hidden;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .rank {
+    display: block;
+    float: left;
+    width: 37px;
+    height: 48px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .rank strong {
+    display: block;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 48px;
+    color: #333;
+    text-indent: 4px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .txt {
+    display: block;
+    overflow: hidden;
+    float: left;
+    width: 227px;
+    padding-right: 16px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .txt .tit_name {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .txt .tit_name a {
+    color: #333;
+    font-size: 14px;
+}
+.detailview_cont .detail_right_cont .box_music_list .list_music li .txt .singer {
+    display: block;
+    overflow: hidden;
+    max-height: 24px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #888;
+}
+.detailview_cont .detail_right_cont .box_music_list .app_play {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #888;
+    text-align: right;
+}
+.detailview_cont .detail_right_cont .box_music_list .app_play > i {color: #41d26b;}
+.detailview_cont .detail_right_cont .ctr {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.detailview_cont .detail_right_cont .ctr > a {
+    display: inline-block;
+    height: 30px;
+    padding-right: 12px;
+    font-size: 13px;
+    line-height: 30px;
+    color: #999;
+}
+/* 관련앨범 */
+.detailview_cont .detail_right_cont .box_album_cont {
+    position: relative;
+    margin-top: 25px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .tit_sub_float > span {
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    padding: 0 0 0 12px;
+    vertical-align: middle;
+    border: 1px solid #444;
+    border-radius: 20px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album {
+    overflow: hidden;
+    margin-top: 4px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li {
+    float: left;
+    width: 135px;
+    margin-left: 10px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li.first {margin-left: 0;}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li a {display: block;}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li a .album {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 135px;
+    height: 135px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li a .album > img {
+    width: 135px;
+    height: 135px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li .txt {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 6px;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li .txt .tit_name {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #666;
+}
+.detailview_cont .detail_right_cont .box_album_cont .list_album li .txt .singer {
+    display: block;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 랭킹 */
+.detailview_cont .detail_right_cont .box_ranking {
+    position: relative;
+    margin-top: 25px;
+}
+.detailview_cont .detail_right_cont .box_ranking .txt_cate {
+    display: inline-block;
+    color: #4a4a4a;
+    font-size: 12px;
+    padding-left: 9px;
+    line-height: 12px;
+    vertical-align: middle;
+    border-left: 1px solid #eee ;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking {
+    display: block;
+    overflow: hidden;
+    height: 379px;
+    margin-top: 4px;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .item {
+    display: block;
+    position: relative;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .nth1 .inner {
+    height: 126px;
+    padding: 15px 91px 15px 32px;
+    border-top: 0 none;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .inner {
+    display: block;
+    height: 25px;
+    padding: 15px 0 15px 32px;
+    border-top: 1px solid #eee;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .nth1 .ranking {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    width: 16px;
+    height: 32px;
+    color: #00be37;
+    text-align: center;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .ranking {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 16px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333;
+    text-align: center;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .change {
+    display: block;
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 19px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888;
+    text-align: center;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .nth1 .tit {
+    height: 36px;
+    padding-top: 13px;
+    padding-right: 13px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
+    text-overflow: initial;
+    white-space: nowrap;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .tit {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 25px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    color: #888;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .day {
+    display: block;
+    overflow: hidden;
+    height: 17px;
+    max-height: 17px;
+    padding-top: 24px;
+    font-size: 13px;
+    line-height: 17px;
+    color: #888;
+    letter-spacing: 0;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .location {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 18px;
+    max-height: 18px;
+    padding-top: 3px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #888;
+    margin-right: 13px;
+    padding-right: 3px;
+}
+.detailview_cont .detail_right_cont .box_ranking .list_ranking .thumb {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 90px;
+    height: 125px;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+/*rank*/
+main {
+    display: block;
+    overflow: visible;
+    width: auto;
+    min-height: 600px;
+    margin: 0 auto;
+}
+#gnb_menu .on a {color: #41d26b;}
+/* ranking main */
+#conts.conts_ranking {padding: 50px 20px 60px;}
+.soting {
+    display: block;
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    margin: 0 235px;   
+}
+.soting .btn_soting.on {color: #333; border: 1px solid #000;}
+.soting .nth1 {left: 0;}
+.soting .nth2 {left: 190px;}
+.soting .nth3 {left: 380px;}
+.soting .btn_soting {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 190px;
+    height: 42px;
+    outline: none;
+    z-index: 0;
+    color: #666;
+    font-size: 18px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+.rank_date {
+    position: relative;
+    margin: 0 auto;
+}
+.tit_rank_date {
+    margin: 36px auto 20px;
+    display: table;
+}
+.tit_rank_date p {
+    position: relative;
+    display: inline-block;
+    padding-right: 28px;
+}
+.tit_rank_date .now {
+    font-size: 26px;
+    color: #00b523;
+    text-align: center;
+    cursor: pointer;
+    line-height: 27px;
+}
+/*
+.tit_rank_date .bg_arrow {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    width: 18px;
+    height: 9px;
+    background: url('');
+}
+*/
+.rank_top {
+    position: relative;
+    padding-bottom: 0px;
+}
+.box_ranking .tit_sub_float {
+    color: #333;
+    font-weight: normal;
+}
+.tit_sub_float {
+    display: block;
+    width: 100%;
+    height: 54px;
+    margin-left: 4px;
+    font-size: 20px;
+    line-height: 54px;
+    color: #000;
+    text-align: left;
+}
+.box_ranking_list {width: 1009px;}
+.tb1 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+.box_ranking_list thead th:first-child {width: 130px;}
+.box_ranking_list thead th:nth-child(4) {width: 160px;}
+.box_ranking_list thead th {
+    padding: 11px 4px;
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    font-weight: normal;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    color: #333;
+}
+.box_ranking_list thead th.mid {padding-right: 18px;}
+.box_ranking_list tbody td.fst {position: relative;}
+.box_ranking_list tbody td {
+    padding: 14px 0 14px;
+    text-align: center;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+    letter-spacing: -1px;
+}
+.box_ranking_list tbody td .ranking.rank_top {color: #00b337;}
+.box_ranking_list tbody td .ranking {
+    position: absolute;
+    top: 49px;
+    left: 54px;
+    width: 34px;
+    height: 32px;
+    font-size: 30px;
+    color: #333;
+    line-height: 32px;
+    text-align: center;
+}
+.rank_top {
+    position: relative;
+    padding-bottom: 0px;
+}
+.box_ranking_list tbody td .change {
+    position: absolute;
+    top: 84px;
+    left: 62px;
+    width: 19px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #888;
+    text-align: center;
+}
+.screen_out {
+    overflow: hidden;
+    font-size: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    line-height: 0 !important;
+}
+.box_ranking_list tbody td:nth-child(2) > div {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 126px;
+    padding-right: 25px;
+    text-align: left;
+    overflow: hidden;
+}
+.box_ranking_list tbody td:nth-child(2) > div > div {
+    display: table-cell;
+    vertical-align: middle;
+    width: 90px;
+    height: 125px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box_ranking_list tbody td:nth-child(2) > div > div > a {
+    display: block;
+    overflow: hidden;
+    width: 90px;
+    height: 125px;
+}
+.box_ranking_list tbody td:nth-child(2) > div > div > a > img {width: 90px;}
+.box_ranking_list tbody td:nth-child(2) > div > p {
+    display: table-cell;
+    width: 256px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.box_ranking_list tbody td:nth-child(2) > div > p > .ico_list1 {padding: 1px 4px 1px;}
+.box_ranking_list tbody td:nth-child(2) > div > p > .ico_list {
+    padding: 0 4px 0;
+    margin-bottom: 5px;
+}
+.ico_list1 {background-color: #41d26b;}
+.ico_list {
+    float: left;
+    overflow: hidden;
+    height: 14px;
+    padding: 1px 5px;
+    font-size: 11px;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+}
+.box_ranking_list tbody td:nth-child(2) > div > p > .show_title {
+    clear: both;
+    display: block;
+    width: 255px;
+    overflow: hidden;
+}
+.box_ranking_list tbody td .show_title > a {
+    line-height: 18px;
+    font-size: 16px;
+    color: #333;
+}
+.box_ranking_list tbody td .show_date {
+    padding: 0 20px;
+    letter-spacing: 0;
+}
+.box_ranking_list tbody td .show_date li {
+    text-align: right;
+    line-height: 22px;
+}
+.box_ranking_list tbody td.lst {
+    padding: 0;
+    font-size: 14px;
+}
+.box_ranking_list tbody td .btn_rank {
+    padding: 7px 30px;
+    border: 1px solid #ccc;
+}
+.box_ranking_list tbody td .btn_rank > span {font-size: 14px;}

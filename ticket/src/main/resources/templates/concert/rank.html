@@ -1,0 +1,318 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_concert.html">
+	  
+ <section id="list" layout:fragment="content">
+ 
+			<div id="conts" class="conts_ranking">
+                <div class="ranking">
+                    <div class="soting">
+                        <button value="CON" class="btn_soting nth1 on">콘서트/페스티벌</button>
+                        <button value="ART" class="btn_soting nth2">뮤지컬/연극</button>
+                        <button value="EXH" class="btn_soting nth3">전시/클래식/기타</button>
+                    </div>
+
+                    <div class="rank_date">
+                        <div class="tit_rank_date">
+                            <p>
+                                <span class="now">실시간 랭킹 - 2020.08.26(수) 현재</span>
+                                <span class="bg_arrow"></span>
+                            </p>
+                        </div>
+                        <div class="select_drop"></div>
+                    </div>
+
+                    <div class="box_ranking">
+                        <div class="rank_top">
+                            <h2 class="tit_sub_float">콘서트/페스티벌</h2>
+                        </div>
+                        <div class="box_ranking_list">
+                            <table class="tb1">
+                                <thead>
+                                    <tr>
+                                        <th>랭킹</th>
+                                        <th class="mid">공연명</th>
+                                        <th>공연일시</th>
+                                        <th>공연장소</th>
+                                        <th>예매</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">1</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a th:href="@{/concert/view}"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">2</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">3</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">4</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">5</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">6</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">7</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">8</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">9</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fst">
+                                            <span class="ranking rank_top">10</span>
+                                            <span class="change"> -      </span>
+                                            <span class="screen_out">순위유지</span>
+                                        </td>
+                                        <td>
+                                            <div class="show_info">
+                                                <div class="thumb img">
+                                                    <a href="#"><img src="../img/rank_ranking1.PNG" alt="ranking1"></a>
+                                                </div>
+                                                <p class="info_text">
+                                                    <span class="ico_list ico_list1">단독판매</span>
+                                                    <span class="show_title"><a href="#">프롬 단독 콘서트［FROMM Sunset Island］</a></span>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <ul class="show_date">
+                                                <li>2020.09.12 </li>
+                                            </ul>
+                                        </td>
+                                        <td>백암아트홀  </td>
+                                        <td class="lst">
+                                            <a href="#" class="btn_rank"><span>예매하기</span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ </section>
+</html>

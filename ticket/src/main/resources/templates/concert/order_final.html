@@ -1,0 +1,479 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_concert.html">
+
+ <section id="order_final" layout:fragment="content">
+ 
+            <!-- 배송/결제 -->
+            <div class="select">
+                <!-- 배송/결제 상단 -->
+                <div class="location_step">
+                    <ul class="list_step">
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu01">좌석선택</a>
+                        </li>
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu02 on">가격선택</a>
+                        </li>
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu03">배송/결제</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box_r">
+                    <form id="dForm">
+                        <!-- 수령방법 선택 -->
+                        <div class="box_how">
+                            <h3 class="select_tit">수령방법을 선택하세요</h3>
+                            <ul class="list_receipt_how">
+                                <li id="delvy1">
+                                    <label>
+                                        <input type="radio">
+                                        <span style="color:#ccc" class="txt_lab">&nbsp;모바일티켓</span>
+                                    </label>
+                                </li>
+                                <li id="delvy2">
+                                    <label>
+                                        <input type="radio">
+                                        <span class="txt_lab">&nbsp;현장수령</span>
+                                    </label>
+                                </li>
+                                <li id="delvy3">
+                                    <label>
+                                        <input type="radio">
+                                        <span class="txt_lab">&nbsp;배송(2,800원)</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <div class="txt">
+                                <span>공연 당일 현장 교부처에서 예매번호 및 본인 확인 후 티켓을 수령하여 입장이 가능합니다.</span>
+                            </div>
+                            <div class="box_info_use box_gray">
+                                <h4 class="tit_receipt">주문자정보</h4>
+                                <div class="box_inp_opt">
+                                    <table class="tbl">
+                                        <tbody>
+                                            <tr>
+                                                <th class="txt_gray">
+                                                                                                            이름 <span class="require">*</span>
+                                                </th>
+                                                <td>홍길동</td>
+                                                <th class="txt_gray">
+                                                                                                            연락처 <span class="require">*</span>
+                                                </th>
+                                                <td>010-1234-5678</td>
+                                                <th class="txt_gray">
+                                                                                                            이메일 <span class="require">*</span>
+                                                </th>
+                                                <td>abcd@naver.com</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="txt_more txt_gray">입력하신 정보는 공연장에서 예매확인을 위해 사용될 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 결제수단 선택 -->
+                        <div class="box_payment">
+                            <h3 class="select_tit">결제수단을 선택하세요</h3>
+                            <ul class="list_receipt_how">
+                                <li>
+                                    <label>
+                                        <input type="radio" title="신용카드">
+                                        <span class="txt_lab">신용카드</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" title="무통장입금">
+                                        <span class="txt_lab">무통장입금</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" title="휴대폰 결제">
+                                        <span class="txt_lab">휴대폰 결제</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" title="카카오페이 머니">
+                                        <span class="txt_lab">카카오페이 머니</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" title="카카오페이 카드">
+                                        <span class="txt_lab">카카오페이 카드</span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <!-- 신용카드시 노출-->
+                            <div class="box_card box_gray" style="display: block;">
+                                <div class="box_inp_opt">
+                                    <table class="tbl">
+                                        <colgroup>
+                                            <col style="width: 68px;">
+                                            <col style="width: 220px;">
+                                            <col>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th class="txt_gray">카드</th>
+                                                <td>
+                                                    <div class="wrap_sel">
+                                                        <div class="btn_sel">
+                                                            <select name="cardCode" id="cardCode" class="sel_cate">
+                                                                <option value selected="selected">카드를 선택해주세요.</option>
+                                                                <option value="SAMSUNG">삼성카드</option>
+                                                                <option value="KB">KB국민카드</option>
+                                                                <option value="HYUNDAI">현대카드</option>
+                                                                <option value="BC">BC카드</option>
+                                                                <option value="SHINHAN">신한카드</option>
+                                                                <option value="NH">NH농협카드</option>
+                                                                <option value="NHMH">NH문화누리카드</option>
+                                                                <option value="HANA_SK">하나카드</option>
+                                                                <option value="LOTTE">롯데카드</option>
+                                                                <option value="CITI">씨티카드</option>
+                                                                <option value="KAKAOBANK">카카오뱅크카드</option>
+                                                                <option value="BCKA">카카오페이카드</option>
+                                                                <option value="KBANK">케이뱅크카드</option>
+                                                                <option value="WOORI">우리카드</option>
+                                                                <option value="GWANGJU">광주카드</option>
+                                                                <option value="JEONBOOK">전북카드</option>
+                                                                <option value="SOOHYUP">수협카드</option>
+                                                                <option value="KDB">KDB산업은행카드</option>
+                                                                <option value="JEJU">제주카드</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt_gray">할부</th>
+                                                <td>
+                                                    <div class="wrap_sel">
+                                                        <div class="btn_sel">
+                                                            <select name="quota" id="quota" class="sel_cate">
+                                                                <option value="00" selected="selected">일시불</option>
+                                                                <option value="2">2개월</option>
+                                                                <option value="3">3개월</option>
+                                                                <option value="4">4개월</option>
+                                                                <option value="5">5개월</option>
+                                                                <option value="6">6개월</option>
+                                                                <option value="7">7개월</option>
+                                                                <option value="8">8개월</option>
+                                                                <option value="9">9개월</option>
+                                                                <option value="10">10개월</option>
+                                                                <option value="11">11개월</option>
+                                                                <option value="12">12개월</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 무통장 입금시 노출-->
+                            <div class="box_bankbook box_gray" style="display: none;">
+                                <div class="box_inp_opt">
+                                    <table class="tbl">
+                                        <tbody>
+                                            <tr>
+                                                <th class="txt_gray">입금은행</th>
+                                                <td>
+                                                    <div class="wrap_sel">
+                                                        <div class="btn_sel">
+                                                            <select name="bankCode" class="sel_cate">
+                                                                <option value selected="selected">입금하실 은행을 선택하세요.</option>
+                                                                <option value="03">기업은행</option>
+                                                                <option value="04">국민은행</option>
+                                                                <option value="11">농협은행</option>
+                                                                <option value="81">하나은행</option>
+                                                                <option value="20">우리은행</option>
+                                                                <option value="88">신한은행</option>
+                                                                <option value="39">경남은행</option>
+                                                                <option value="71">우체국</option>
+                                                                <option value="32">부산은행</option>
+                                                                <option value="31">대구은행</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="txt_gray">예금주</th>
+                                                <td>멜론티켓</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <dl class="bankbook_tip">
+                                                        <dt>무통장입금 TIP</dt>
+                                                        <dd>* 무통장 입금의 경우, 은행에 따라 오후 11시 30분 이후로는 온라인 입금이 제한 될 수 있습니다.</dd>
+                                                        <dd>* ATM 기기로는 가상 계좌 입금이 불가할 수 있으므로 인터넷뱅킹, 폰뱅킹 사용이 불가능한 경우엔 <br>&nbsp;&nbsp;다른 결제 수단을 이용해 주세요!</dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- 휴대폰 결제시 노출-->
+                            <div class="box_phone box_gray" style="display: none;">
+                                <p class="txt_gray">
+                                    	휴대폰 결제 한도는 50만원까지 가능하며, 통신사 수납/가입상태에 따라 한도가 상이할 수 있습니다.
+                                </p>
+                            </div>
+
+                            <!-- 카카오페이 머니 결제시 노출-->
+                            <div class="box_phone box_gray" style="display: none;">
+                                <p>
+						        	카카오페이 머니는 카카오톡 내에서 카카오머니를 충전하여 결제 시 간단하게 비밀번호만으로 결제할 수 있는 간편결제 서비스입니다.
+                                </p>
+                            </div>
+
+                            <!-- 카카오페이 카드 결제시 노출-->
+                            <div class="box_phone box_gray" style="display: none;">
+                                <p>
+						        	카카오페이 카드는 카카오톡 내에서 개인 신용카드를 등록하여 결제 시 간단하게 비밀번호만으로 결제할 수 있는 간편결제 서비스입니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 예매자 전체 동의 -->
+                        <div class="box_cont box_receipt">
+                            <ul class="box_agree">
+                                <li class="list_agree frt">
+                                    <div class="select_tit">
+                                        	예매자동의
+                                        <div class="tit_check_r">
+                                            <input type="checkbox" title="전체 동의합니다.">
+                                            <label for="checkAll">
+                                                <span class="txt_lab">전체동의</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list_agree">
+                                    <div class="tit_check">
+                                        <input type="checkbox">
+                                        <label for="chkAgree01">
+                                            <span class="txt_lab">[필수] 예매 및 취소 수수료/ 취소기한을 확인하였으며 동의합니다.</span>
+                                        </label>
+                                    </div>
+                                    <div class="box_ar_info">
+                                        <div class="tb_date">
+                                            <table class="tbl">
+                                                <colgroup>
+                                                    <col style="width: 226px;">
+                                                    <col style="width: 326px;">
+                                                </colgroup>
+                                                <thead class="tb_date_th">
+                                                    <tr>
+                                                        <th class="txt_gray">취소일</th>
+                                                        <th class="txt_gray">취소수수료</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2020.08.28 ~ 2020.09.02</td>
+                                                        <td>없음</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020.09.03 ~ 2020.09.05</td>
+                                                        <td>티켓금액의 10%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020.09.06 ~ 2020.09.09</td>
+                                                        <td>티켓금액의 20%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2020.09.10 ~ 2020.09.11</td>
+                                                        <td>티켓금액의 30%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <ul class="list_ds">
+                                            <li>- 예매 당일 취소할 경우에는 예매수수료 및 취소수수료는 환불가능 합니다. (취소수수료는 취소 기한 내에 한함)</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="list_agree">
+                                    <ul>
+                                        <li>
+                                            <div class="tit_check">
+                                                <input type="checkbox">
+                                                <label for="chkAgree_kakao">
+                                                    <span class="txt_lab">[필수] 카카오 전자금융 이용약관 동의</span>
+                                                </label>
+                                                <a href="#" class="btn_flexible_ico2 btn_detail"><span>상세보기</span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list_agree">
+                                    <ul>
+                                        <li>
+                                            <div class="tit_check">
+                                                <input type="checkbox">
+                                                <label for="chkAgree03">
+                                                    <span class="txt_lab">[필수] 개인정보 수집/이용에 동의합니다.</span>
+                                                </label>
+                                                <a href="#" class="btn_flexible_ico2 btn_detail"><span>상세보기</span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list_agree">
+                                    <ul>
+                                        <li>
+                                            <div class="tit_check">
+                                                <input type="checkbox">
+                                                <label for="chkAgree04">
+                                                    <span class="txt_lab">[필수] 개인정보 제3자 제공 동의 및 주의사항</span>
+                                                </label>
+                                                <a href="#" class="btn_flexible_ico2 btn_detail"><span>상세보기</span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list_agree">
+                                    <ul>
+                                        <li>
+                                            <div class="tit_check">
+                                                <input type="checkbox">
+                                                <label for="chkAgree02">
+                                                    <span class="txt_lab">[필수] 멜론티켓 이용약관 동의합니다.</span>
+                                                </label>
+                                                <a href="#" class="btn_flexible_ico2 btn_detail"><span>상세보기</span></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <!-- 티켓 정보 영역 -->
+            <div class="ticket_info">
+                <h2 class="logo"><img src="../img/order_seat_logo.PNG"></h2>
+                <div class="box_info">
+                    <h3 class="select_tit select_t txt_prod_name">프롬 단독 콘서트［FROMM Sunset Island］</h3>
+                    <div class="box_ticket">
+                        <ul class="box_ticket_list">
+                            <li class="nth nth1 txt_prod_schedule">2020.09.12(토) 19:00</li>
+                            <li class="nth nth2 txt_ticket_info">총 1석 선택<br>전석 1 층 M 열 9 번 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box_info">
+                    <h3 class="select_tit">결제금액</h3>
+                    <div class="box_ticket">
+                        <div class="box_total_inner">
+                            <p class="tk_b">
+                                <span class="tk_tit">티켓금액</span>
+                                <span class="pay pay_comp"><span>77,000</span>원</span>
+                            </p>
+                            <ul class="list_tkpay">
+                                <li>
+                                    <span class="tk_tit">기본가</span>
+                                    <span class="pay"><span>77,000</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">가격할인</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">쿠폰할인</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">공연예매권</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="box_total_inner">
+                            <p class="tk_b">
+                                <span class="tk_tit tk_tit_b">예매수수료</span>
+                                <span class="pay pay_comp"><span>1,000</span>원</span>
+                            </p>
+                        </div>
+                        <div class="box_total_inner 1st">
+                            <p class="tk_b">
+                                <span class="tk_tit tk_tit_b">배송료</span>
+                                <span class="pay pay_comp"><span>0</span>원</span>
+                            </p>
+                        </div>
+                        <div class="box_total_inner box_result">
+                            <span class="tk_tit tot_tit">총 결제금액</span>
+                            <strong class="pay tot_pay"><span>78,000</span>원</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_info_bm">
+                    <div class="box_info_list">
+                        <ul class="one_list">
+                            <li>
+                                                                        취소기한 : <span class="txt_og">2020년 9월 11일(금) 17:00 까지</span>
+                            </li>
+                            <li>
+                                                                         취소수수료 : <span class="txt_og">티켓금액의 0~30%</span>
+                                <a href="#" class="btn_detail"><span>상세보기</span></a>
+                                <div class="floating_hover_box">
+                                    <strong>취소 수수료 안내</strong>
+                                    <div class="tabling">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">취소일</th>
+                                                    <th scope="col">취소수수료</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2020.08.28 ~ 2020.09.02</td>
+                                                    <td>없음</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.03 ~ 2020.09.05</td>
+                                                    <td>티켓금액의 10%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.06 ~ 2020.09.09</td>
+                                                    <td>티켓금액의 20%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.10 ~ 2020.09.11</td>
+                                                    <td>티켓금액의 30%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_onestop">
+                        <span class="button btWhite frt">
+                            <a th:href="@{/concert/order_price}" class="btnOne"><em><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;이전</em></a>
+                        </span>
+                        <span class="button btNext on">
+                            <a href="#" class="btnOne"><em>결제하기</em></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+ </section>
+</html>

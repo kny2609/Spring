@@ -1,0 +1,199 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_concert.html">
+
+ <section id="order_price" layout:fragment="content">
+
+            <!-- 가격 선택 -->
+            <div class="select">
+                <!-- 가격 선택 상단 -->
+                <div class="location_step">
+                    <ul class="list_step">
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu01">좌석선택</a>
+                        </li>
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu02 on">가격선택</a>
+                        </li>
+                        <li class="step">
+                            <a href="#" class="btn_menu btn_menu03">배송/결제</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box_select box_r">
+                    <!-- 티켓가격 선택 -->
+                    <div class="box_select_t">
+                        <h3 class="select_tit">티켓가격을 선택하세요</h3>
+                        <div class="box_cont box_ticket">
+                            <h4>
+                                <strong class="tit_ticket">전석</strong>
+                                <span class="txt">
+                                    <span class="txt_seat_grade_tot">
+                                        <span>1</span>매중
+                                    </span>
+                                    <em>1</em>매 선택
+                                </span>
+                            </h4>
+                            <div class="list_ticket">
+                                <div class="box_ticket_t on">
+                                    <div>
+                                        <dl>
+                                            <dt class="tit_tk base_pr">기본가</dt>
+                                            <dd class="price price_sale_r txt_bd">77,000원</dd>
+                                            <dd class="price sel">
+                                                <select class="sel_cate">
+                                                    <option value="0">0매</option>
+                                                    <option value="1">1매</option>
+                                                </select>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 할인수단 선택 -->
+                    <div class="box_select_t box_top">
+                        <h3 class="select_tit">할인수단을 선택하세요</h3>
+                        <div class="box_cont box_coupon">
+                            <div class="list_coupon">
+                                <div class="list_coupon_t frt">
+                                    <div class="ticket_btn_cp">
+                                        <div class="box_coupon_t">
+                                            <span class="tit_cp">
+                                                	쿠폰
+                                                <span class="txt_gr"><span>0</span>개</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list_coupon">
+                                <div class="list_coupon_t">
+                                    <div class="ticket_btn_cp">
+                                        <div class="box_coupon_t">
+                                            <span class="tit_cp">
+                                              	 공연예매권 
+                                                <span class="txt_gr"><span>0</span>개</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 티켓 정보 영역 -->
+            <div class="ticket_info">
+                <h2 class="logo"><img src="../img/order_seat_logo.PNG"></h2>
+                <div class="box_info">
+                    <h3 class="select_tit select_t txt_prod_name">프롬 단독 콘서트［FROMM Sunset Island］</h3>
+                    <div class="box_ticket">
+                        <ul class="box_ticket_list">
+                            <li class="nth nth1 txt_prod_schedule">2020.09.12(토) 19:00</li>
+                            <li class="nth nth2 txt_ticket_info">총 1석 선택<br>전석 1 층 M 열 9 번 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box_info">
+                    <h3 class="select_tit">결제금액</h3>
+                    <div class="box_ticket">
+                        <div class="box_total_inner">
+                            <p class="tk_b">
+                                <span class="tk_tit">티켓금액</span>
+                                <span class="pay pay_comp"><span>77,000</span>원</span>
+                            </p>
+                            <ul class="list_tkpay">
+                                <li>
+                                    <span class="tk_tit">기본가</span>
+                                    <span class="pay"><span>77,000</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">가격할인</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">쿠폰할인</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                                <li>
+                                    <span class="tk_tit">공연예매권</span>
+                                    <span class="pay"><span>0</span>원</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="box_total_inner">
+                            <p class="tk_b">
+                                <span class="tk_tit tk_tit_b">예매수수료</span>
+                                <span class="pay pay_comp"><span>1,000</span>원</span>
+                            </p>
+                        </div>
+                        <div class="box_total_inner 1st">
+                            <p class="tk_b">
+                                <span class="tk_tit tk_tit_b">배송료</span>
+                                <span class="pay pay_comp"><span>0</span>원</span>
+                            </p>
+                        </div>
+                        <div class="box_total_inner box_result">
+                            <span class="tk_tit tot_tit">총 결제금액</span>
+                            <strong class="pay tot_pay"><span>78,000</span>원</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="box_info_bm">
+                    <div class="box_info_list">
+                        <ul class="one_list">
+                            <li>
+                                취소기한 : <span class="txt_og">2020년 9월 11일(금) 17:00 까지</span>
+                            </li>
+                            <li>
+                                취소수수료 : <span class="txt_og">티켓금액의 0~30%</span>
+                                <a href="#" class="btn_detail"><span>상세보기</span></a>
+                                <div class="floating_hover_box">
+                                    <strong>취소 수수료 안내</strong>
+                                    <div class="tabling">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">취소일</th>
+                                                    <th scope="col">취소수수료</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>2020.08.28 ~ 2020.09.02</td>
+                                                    <td>없음</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.03 ~ 2020.09.05</td>
+                                                    <td>티켓금액의 10%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.06 ~ 2020.09.09</td>
+                                                    <td>티켓금액의 20%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2020.09.10 ~ 2020.09.11</td>
+                                                    <td>티켓금액의 30%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_onestop">
+                        <span class="button btWhite frt">
+                            <a th:href="@{/concert/order_seat}" class="btnOne"><em><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;이전</em></a>
+                        </span>
+                        <span class="button btNext on">
+                            <a th:href="@{/concert/order_final}" class="btnOne"><em>다음&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></em></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+ </section>
+</html>
